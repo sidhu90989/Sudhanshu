@@ -20,6 +20,7 @@
   <meta name="twitter:image" content="/assets/img/profile-photo-optimized.webp" />
   <link rel="icon" type="image/svg+xml" href="/meta/favicon.svg" />
   <link rel="manifest" href="/meta/manifest.json" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="preload" href="/styles/variables.css" as="style" />
   <link rel="stylesheet" href="/styles/variables.css" />
   <link rel="stylesheet" href="/styles/style.css" />
@@ -64,24 +65,36 @@
     <section id="hero" class="section hero" role="region" aria-labelledby="hero-heading" data-scroll-section>
       <div class="hero__bg-gradient"></div>
       <div class="hero__content">
-        <div class="hero__text" data-scroll data-scroll-speed="1">
-          <span class="hero__label">Creative Developer</span>
-          <h1 id="hero-heading" class="hero__title">
-            <span class="line" data-scroll data-scroll-speed="2">Crafting Digital</span>
-            <span class="line" data-scroll data-scroll-speed="1.5">Experiences</span>
-          </h1>
-          <p class="hero__subtitle" data-scroll data-scroll-speed="1.2">
-            Sudhanshu Suryawanshi • B.Tech Student<br>
-            Frontend • WebGL • 3D Visualization
-          </p>
+        <div class="hero__left" data-scroll data-scroll-speed="1">
+          <div class="hero__text">
+            <span class="hero__label">Hello, I'm</span>
+            <h1 id="hero-heading" class="hero__title">Sudhanshu Suryawanshi</h1>
+            <h3 class="hero__typed">And I'm a <span class="multiple-text" id="typed-text"></span></h3>
+            <p class="hero__subtitle">
+              B.Tech Student | Frontend Developer | UI/UX Enthusiast<br>
+              Passionate about designing creative and futuristic web experiences.
+            </p>
+          </div>
+          <div class="social-media">
+            <a href="https://facebook.com" target="_blank" class="magnetic" data-magnetic><i class='bx bxl-facebook'></i></a>
+            <a href="https://instagram.com" target="_blank" class="magnetic" data-magnetic><i class='bx bxl-instagram'></i></a>
+            <a href="https://linkedin.com" target="_blank" class="magnetic" data-magnetic><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com" target="_blank" class="magnetic" data-magnetic><i class='bx bxl-github'></i></a>
+          </div>
+          <div class="hero__cta">
+            <button class="btn primary magnetic" data-magnetic data-action="download-cv">
+              <span>Download CV</span>
+            </button>
+            <button class="btn ghost magnetic" data-magnetic data-action="view-projects">
+              <span>View Work</span>
+            </button>
+          </div>
         </div>
-        <div class="hero__cta" data-scroll data-scroll-speed="0.8">
-          <button class="btn primary magnetic" data-magnetic data-action="view-projects">
-            <span>View Work</span>
-          </button>
-          <button class="btn ghost magnetic" data-magnetic data-action="download-cv">
-            <span>Download CV</span>
-          </button>
+        <div class="hero__right" data-scroll data-scroll-speed="0.8">
+          <div class="profile-img-wrapper">
+            <div class="neon-circle"></div>
+            <img src="/assets/img/profile-photo-optimized.webp" alt="Sudhanshu Suryawanshi" class="profile-img">
+          </div>
         </div>
       </div>
       <div class="scroll-indicator" data-scroll data-scroll-speed="2">
@@ -90,17 +103,21 @@
       </div>
     </section>
     <section id="about" class="section about" role="region" aria-labelledby="about-heading" data-scroll-section>
-      <div class="split-layout">
-        <div class="split-left" data-scroll data-scroll-speed="1">
+      <div class="about-wrapper">
+        <div class="about-img" data-scroll data-scroll-speed="1">
+          <div class="neon-border">
+            <img src="/assets/img/profile-photo-optimized.webp" alt="About">
+          </div>
+        </div>
+        <div class="about-content" data-scroll data-scroll-speed="0.8">
           <span class="section-label">About Me</span>
           <h2 id="about-heading" class="section-title">
             <span class="line-reveal">Building the</span>
             <span class="line-reveal">Future of Web</span>
           </h2>
-        </div>
-        <div class="split-right" data-scroll data-scroll-speed="0.8">
-          <p class="lead fade-in">I'm a B.Tech student passionate about crafting immersive web experiences that fuse performance, accessibility, and interactive 3D.</p>
-          <p class="fade-in">Specializing in WebGL, Three.js, and modern frontend frameworks, I transform ideas into engaging digital realities.</p>
+          <h3 class="about-subtitle">B.Tech Student & Creative Developer</h3>
+          <p class="lead fade-in">I'm a passionate developer who loves to build amazing digital experiences. I create responsive, modern, and animated websites using HTML, CSS, JavaScript, and frontend frameworks.</p>
+          <p class="fade-in">Specializing in WebGL, Three.js, and modern frontend technologies, I transform ideas into engaging digital realities that push the boundaries of web development.</p>
           <div class="stats">
             <div class="stat-item fade-in">
               <span class="stat-number">50+</span>
@@ -115,6 +132,7 @@
               <span class="stat-label">CGPA</span>
             </div>
           </div>
+          <a href="#contact" class="btn primary magnetic" data-magnetic>Let's Talk</a>
         </div>
       </div>
     </section>

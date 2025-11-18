@@ -12,6 +12,7 @@ function init(){
   initSmoothScroll();
   initCustomCursor();
   initMagneticButtons();
+  initTypedText();
   
   if(!hasWebGL() || prefersReducedMotion()) { enableFallback(); return; }
   const canvas = document.getElementById('three-canvas');
@@ -24,6 +25,43 @@ function init(){
   initScrollAnimations();
   if(location.search.includes('debug')) makeFPSMeter();
   lazyAssets();
+}
+
+function initTypedText(){
+  const typedElement = document.getElementById('typed-text');
+  if(!typedElement) return;
+  
+  const strings = ['Frontend Developer', 'UI/UX Designer', 'WebGL Developer', 'Creative Coder', '3D Enthusiast'];
+  let stringIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  
+  function type(){
+    const current = strings[stringIndex];
+    
+    if(isDeleting){
+      typedElement.textContent = current.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typedElement.textContent = current.substring(0, charIndex + 1);
+      charIndex++;
+    }
+    
+    let typeSpeed = isDeleting ? 50 : 100;
+    
+    if(!isDeleting && charIndex === current.length){
+      typeSpeed = 2000;
+      isDeleting = true;
+    } else if(isDeleting && charIndex === 0){
+      isDeleting = false;
+      stringIndex = (stringIndex + 1) % strings.length;
+      typeSpeed = 500;
+    }
+    
+    setTimeout(type, typeSpeed);
+  }
+  
+  type();
 }
 
 function initSmoothScroll(){
