@@ -1,0 +1,3 @@
+Placeholder GLB content. Replace with optimized Draco-compressed GLB.
+Source suggestion: Create in Blender (simple studio desk), export glTF, run:
+gltf-pipeline -i hero.glb -o hero-draco.glb --draco.compressionLevel=10 --quantize

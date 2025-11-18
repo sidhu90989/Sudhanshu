@@ -1,0 +1,11 @@
+{
+  "name": "Sudhanshu Suryawanshi Portfolio",
+  "short_name": "Sudhanshu",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0f17",
+  "theme_color": "#0d0f17",
+  "icons": [
+    {"src": "/meta/favicon.svg", "sizes": "64x64", "type": "image/svg+xml"}
+  ]
+}

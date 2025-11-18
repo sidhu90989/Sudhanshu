@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sudhanshu Suryawanshi • Portfolio</title>
+  <meta name="description" content="Portfolio of Sudhanshu Suryawanshi – B.Tech Student, Creative Frontend & WebGL Developer." />
+  <meta name="keywords" content="Sudhanshu Suryawanshi, B.Tech, WebGL, Three.js, Frontend Developer, Portfolio" />
+  <meta name="theme-color" content="#0d0f17" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sudhanshu Suryawanshi • Portfolio" />
+  <meta property="og:description" content="Creative Frontend Developer & 3D/WebGL Enthusiast" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="/assets/img/profile-photo-optimized.webp" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sudhanshu Suryawanshi • Portfolio" />
+  <meta name="twitter:description" content="Creative Frontend Developer & 3D/WebGL Enthusiast" />
+  <meta name="twitter:image" content="/assets/img/profile-photo-optimized.webp" />
+  <link rel="icon" type="image/svg+xml" href="/meta/favicon.svg" />
+  <link rel="manifest" href="/meta/manifest.json" />
+  <link rel="preload" href="/styles/variables.css" as="style" />
+  <link rel="stylesheet" href="/styles/variables.css" />
+  <link rel="stylesheet" href="/styles/style.css" />
+  <script>/* Inline critical minimal CSS fallback if external fails */</script>
+  <script>
+    // JSON-LD structured data
+    const ld = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sudhanshu Suryawanshi",
+      "jobTitle": "Creative Frontend Developer",
+      "url": "https://example.com",
+      "email": "mailto:your-email@example.com",
+      "sameAs": [
+        "https://github.com/yourhandle",
+        "https://www.linkedin.com/in/yourhandle",
+        "https://instagram.com/yourhandle"
+      ]
+    };
+    document.write('<script type="application/ld+json">'+JSON.stringify(ld)+'<\/script>');
+  </script>
+</head>
+<body>
+  <header id="site-header" class="site-header" role="banner" aria-label="Main header">
+    <nav class="nav" aria-label="Primary navigation">
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">☰</button>
+      <ul id="nav-menu" class="nav__menu" data-active="false">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main" role="main">
+    <canvas id="three-canvas" aria-hidden="true"></canvas>
+    <section id="hero" class="section hero" role="region" aria-labelledby="hero-heading">
+      <div class="hero__content glass">
+        <h1 id="hero-heading" class="gradient-text">Sudhanshu Suryawanshi</h1>
+        <p id="tagline" class="tagline" data-typewriter> B.Tech Student • Creative Frontend Developer • 3D & WebGL Enthusiast </p>
+        <div class="hero__cta">
+          <button class="btn primary" data-action="view-projects">View Projects</button>
+          <button class="btn ghost" data-action="download-cv">Download CV</button>
+        </div>
+        <div class="degree-badge" aria-label="Degree Badge" tabindex="0">
+          <span class="degree-badge__front">B.Tech</span>
+          <span class="degree-badge__back">CGPA: 8.7</span>
+        </div>
+      </div>
+      <div class="hero__fallback" id="hero-fallback" hidden>
+        <img src="/assets/img/profile-photo-optimized.webp" alt="Profile photo" width="240" height="240" />
+        <p class="fallback-text">Interactive 3D disabled – showing static fallback.</p>
+      </div>
+    </section>
+    <section id="about" class="section" role="region" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="gradient-text">About</h2>
+      <p class="lead">I am a B.Tech student passionate about crafting immersive web experiences that fuse performance, accessibility, and interactive 3D.</p>
+      <ul class="edu">
+        <li><strong>Education:</strong> B.Tech – Your College Name – 2022–2026</li>
+      </ul>
+    </section>
+    <section id="skills" class="section" role="region" aria-labelledby="skills-heading">
+      <h2 id="skills-heading" class="gradient-text">Skills</h2>
+      <ul class="skills-list" role="list">
+        <li>JavaScript</li><li>C++</li><li>WebGL / Three.js</li><li>React</li><li>Node.js</li><li>Git</li><li>SQL</li><li>Embedded Systems</li>
+      </ul>
+      <div id="skills-flow" class="skills-flow" aria-hidden="true"></div>
+    </section>
+    <section id="projects" class="section" role="region" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" class="gradient-text">Projects</h2>
+      <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
+    </section>
+    <section id="timeline" class="section" role="region" aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading" class="gradient-text">Timeline / Resume</h2>
+      <div class="timeline" id="timeline-container"></div>
+    </section>
+    <section id="contact" class="section" role="region" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="gradient-text">Contact</h2>
+      <form id="contact-form" class="contact-form" aria-describedby="contact-note">
+        <div id="contact-note" class="sr-only">All fields required</div>
+        <label>Email <input name="email" type="email" required placeholder="you@example.com"/></label>
+        <label>Message <textarea name="message" required placeholder="Say hello"></textarea></label>
+        <button type="submit" class="btn primary">Send</button>
+        <p class="form-hint">(Form stub – configure Netlify / Formspree)</p>
+      </form>
+      <ul class="social-links" role="list">
+        <li><a href="https://github.com/yourhandle" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </section>
+  </main>
+  <div id="modal-root" aria-live="assertive"></div>
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; <span id="year"></span> Sudhanshu Suryawanshi. All rights reserved.</p>
+    <button class="btn tiny" data-action="toggle-inspect" aria-pressed="false" aria-label="Toggle Inspect Mode">Inspect (I)</button>
+  </footer>
+  <noscript>
+    <div class="noscript">JavaScript is required for full interactive experience.</div>
+  </noscript>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

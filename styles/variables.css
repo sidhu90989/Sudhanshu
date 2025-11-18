@@ -1,0 +1,16 @@
+:root {
+  --bg: #0d0f17;
+  --text: #dbe4ff;
+  --accent-gradient: linear-gradient(90deg,#7b2ff7,#5d5fe9,#3bc8f7);
+  --accent1: #7b2ff7;
+  --accent2: #5d5fe9;
+  --accent3: #3bc8f7;
+  --glass-bg: rgba(15,20,30,0.55);
+  --glass-border: rgba(255,255,255,0.12);
+  --radius: 18px;
+  --font-stack: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --transition: none; }
+}
