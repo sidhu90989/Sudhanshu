@@ -43,56 +43,151 @@
   </script>
 </head>
 <body>
+  <div id="custom-cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+  </div>
   <header id="site-header" class="site-header" role="banner" aria-label="Main header">
+    <div class="logo">SS</div>
     <nav class="nav" aria-label="Primary navigation">
       <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">☰</button>
       <ul id="nav-menu" class="nav__menu" data-active="false">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#hero" data-magnetic>Home</a></li>
+        <li><a href="#about" data-magnetic>About</a></li>
+        <li><a href="#projects" data-magnetic>Work</a></li>
+        <li><a href="#contact" data-magnetic>Contact</a></li>
       </ul>
     </nav>
   </header>
-  <main id="main" role="main">
+  <main id="main" role="main" data-scroll-container>
     <canvas id="three-canvas" aria-hidden="true"></canvas>
-    <section id="hero" class="section hero" role="region" aria-labelledby="hero-heading">
-      <div class="hero__content glass">
-        <h1 id="hero-heading" class="gradient-text">Sudhanshu Suryawanshi</h1>
-        <p id="tagline" class="tagline" data-typewriter> B.Tech Student • Creative Frontend Developer • 3D & WebGL Enthusiast </p>
-        <div class="hero__cta">
-          <button class="btn primary" data-action="view-projects">View Projects</button>
-          <button class="btn ghost" data-action="download-cv">Download CV</button>
+    <section id="hero" class="section hero" role="region" aria-labelledby="hero-heading" data-scroll-section>
+      <div class="hero__bg-gradient"></div>
+      <div class="hero__content">
+        <div class="hero__text" data-scroll data-scroll-speed="1">
+          <span class="hero__label">Creative Developer</span>
+          <h1 id="hero-heading" class="hero__title">
+            <span class="line" data-scroll data-scroll-speed="2">Crafting Digital</span>
+            <span class="line" data-scroll data-scroll-speed="1.5">Experiences</span>
+          </h1>
+          <p class="hero__subtitle" data-scroll data-scroll-speed="1.2">
+            Sudhanshu Suryawanshi • B.Tech Student<br>
+            Frontend • WebGL • 3D Visualization
+          </p>
         </div>
-        <div class="degree-badge" aria-label="Degree Badge" tabindex="0">
-          <span class="degree-badge__front">B.Tech</span>
-          <span class="degree-badge__back">CGPA: 8.7</span>
+        <div class="hero__cta" data-scroll data-scroll-speed="0.8">
+          <button class="btn primary magnetic" data-magnetic data-action="view-projects">
+            <span>View Work</span>
+          </button>
+          <button class="btn ghost magnetic" data-magnetic data-action="download-cv">
+            <span>Download CV</span>
+          </button>
         </div>
       </div>
-      <div class="hero__fallback" id="hero-fallback" hidden>
-        <img src="/assets/img/profile-photo-optimized.webp" alt="Profile photo" width="240" height="240" />
-        <p class="fallback-text">Interactive 3D disabled – showing static fallback.</p>
+      <div class="scroll-indicator" data-scroll data-scroll-speed="2">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </section>
-    <section id="about" class="section" role="region" aria-labelledby="about-heading">
-      <h2 id="about-heading" class="gradient-text">About</h2>
-      <p class="lead">I am a B.Tech student passionate about crafting immersive web experiences that fuse performance, accessibility, and interactive 3D.</p>
-      <ul class="edu">
-        <li><strong>Education:</strong> B.Tech – Your College Name – 2022–2026</li>
-      </ul>
+    <section id="about" class="section about" role="region" aria-labelledby="about-heading" data-scroll-section>
+      <div class="split-layout">
+        <div class="split-left" data-scroll data-scroll-speed="1">
+          <span class="section-label">About Me</span>
+          <h2 id="about-heading" class="section-title">
+            <span class="line-reveal">Building the</span>
+            <span class="line-reveal">Future of Web</span>
+          </h2>
+        </div>
+        <div class="split-right" data-scroll data-scroll-speed="0.8">
+          <p class="lead fade-in">I'm a B.Tech student passionate about crafting immersive web experiences that fuse performance, accessibility, and interactive 3D.</p>
+          <p class="fade-in">Specializing in WebGL, Three.js, and modern frontend frameworks, I transform ideas into engaging digital realities.</p>
+          <div class="stats">
+            <div class="stat-item fade-in">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item fade-in">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years Learning</span>
+            </div>
+            <div class="stat-item fade-in">
+              <span class="stat-number">8.7</span>
+              <span class="stat-label">CGPA</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="skills" class="section" role="region" aria-labelledby="skills-heading">
-      <h2 id="skills-heading" class="gradient-text">Skills</h2>
-      <ul class="skills-list" role="list">
-        <li>JavaScript</li><li>C++</li><li>WebGL / Three.js</li><li>React</li><li>Node.js</li><li>Git</li><li>SQL</li><li>Embedded Systems</li>
-      </ul>
-      <div id="skills-flow" class="skills-flow" aria-hidden="true"></div>
+        <section id="skills" class="section skills-section" role="region" aria-labelledby="skills-heading" data-scroll-section>
+      <div class="skills-grid">
+        <div class="skill-category" data-scroll data-scroll-speed="1">
+          <h3>Frontend</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Three.js</li>
+            <li>GSAP</li>
+            <li>WebGL</li>
+          </ul>
+        </div>
+        <div class="skill-category" data-scroll data-scroll-speed="0.8">
+          <h3>Backend</h3>
+          <ul>
+            <li>Node.js</li>
+            <li>SQL</li>
+            <li>REST APIs</li>
+          </ul>
+        </div>
+        <div class="skill-category" data-scroll data-scroll-speed="1.2">
+          <h3>Other</h3>
+          <ul>
+            <li>C++</li>
+            <li>Git</li>
+            <li>Embedded Systems</li>
+          </ul>
+        </div>
+      </div>
     </section>
-    <section id="projects" class="section" role="region" aria-labelledby="projects-heading">
-      <h2 id="projects-heading" class="gradient-text">Projects</h2>
-      <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
+    <section id="contact" class="section contact-section" role="region" aria-labelledby="contact-heading" data-scroll-section>
+      <div class="contact-wrapper">
+        <div class="contact-info" data-scroll data-scroll-speed="1">
+          <span class="section-label">Get In Touch</span>
+          <h2 id="contact-heading" class="section-title">
+            <span class="line-reveal">Let's Create</span>
+            <span class="line-reveal">Something Amazing</span>
+          </h2>
+          <ul class="social-links" role="list">
+            <li><a href="https://github.com/yourhandle" target="_blank" rel="noopener" class="magnetic" data-magnetic>GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noopener" class="magnetic" data-magnetic>LinkedIn</a></li>
+            <li><a href="https://instagram.com/yourhandle" target="_blank" rel="noopener" class="magnetic" data-magnetic>Instagram</a></li>
+          </ul>
+        </div>
+        <form id="contact-form" class="contact-form" aria-describedby="contact-note" data-scroll data-scroll-speed="0.8">
+          <div id="contact-note" class="sr-only">All fields required</div>
+          <div class="form-group">
+            <input name="email" type="email" required placeholder="Your Email"/>
+          </div>
+          <div class="form-group">
+            <textarea name="message" required placeholder="Your Message"></textarea>
+          </div>
+          <button type="submit" class="btn primary magnetic" data-magnetic>
+            <span>Send Message</span>
+          </button>
+          <p class="form-hint">(Configure Netlify / Formspree)</p>
+        </form>
+      </div>
+    </section>
+    <section id="projects" class="section projects-section" role="region" aria-labelledby="projects-heading" data-scroll-section>
+      <div class="projects-intro">
+        <span class="section-label" data-scroll>Selected Work</span>
+        <h2 id="projects-heading" class="section-title" data-scroll>
+          <span class="line-reveal">Featured</span>
+          <span class="line-reveal">Projects</span>
+        </h2>
+      </div>
+      <div class="projects-horizontal" id="projects-horizontal" data-scroll data-scroll-direction="horizontal" data-scroll-speed="2">
+        <div class="projects-track" id="projects-track"></div>
+      </div>
     </section>
     <section id="timeline" class="section" role="region" aria-labelledby="timeline-heading">
       <h2 id="timeline-heading" class="gradient-text">Timeline / Resume</h2>

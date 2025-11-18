@@ -1,7 +1,7 @@
 :root {
-  --bg: #0d0f17;
+  --bg: #0a0b0f;
   --text: #dbe4ff;
-  --accent-gradient: linear-gradient(90deg,#7b2ff7,#5d5fe9,#3bc8f7);
+  --accent-gradient: linear-gradient(135deg,#7b2ff7,#5d5fe9,#3bc8f7,#7b2ff7);
   --accent1: #7b2ff7;
   --accent2: #5d5fe9;
   --accent3: #3bc8f7;
@@ -9,6 +9,25 @@
   --glass-border: rgba(255,255,255,0.12);
   --radius: 18px;
   --font-stack: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Animated mesh gradient background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(123,47,247,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(93,95,233,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(59,200,247,0.1) 0%, transparent 50%);
+  animation: meshMove 20s ease-in-out infinite;
+}
+
+@keyframes meshMove {
+  0%, 100% { transform: scale(1) translate(0, 0); }
+  33% { transform: scale(1.1) translate(-5%, 5%); }
+  66% { transform: scale(1.05) translate(5%, -5%); }
 }
 
 @media (prefers-reduced-motion: reduce) {

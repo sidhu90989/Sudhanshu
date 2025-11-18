@@ -30,15 +30,27 @@ function setupNav(){
 }
 
 function renderProjects(){
-  const grid = document.getElementById('projects-grid');
-  projectsData.forEach(p=>{
+  const track = document.getElementById('projects-track');
+  if(!track) return;
+  
+  projectsData.forEach((p, i)=>{
     const card = document.createElement('article');
-    card.className='project-card glass';
+    card.className='project-card';
     card.tabIndex=0;
-    card.innerHTML = `<h3>${p.title}</h3><p>${p.desc}</p><button class="btn tiny" data-id="${p.id}" aria-haspopup="dialog">Inspect</button>`;
+    card.innerHTML = `
+      <div>
+        <span style="font-size:0.85rem; color:var(--accent3); letter-spacing:2px;">PROJECT ${String(i+1).padStart(2,'0')}</span>
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+        <div style="margin-top:1rem;">
+          ${p.stack.map(s=>`<span style="display:inline-block; padding:0.4rem 0.8rem; background:rgba(255,255,255,0.08); border-radius:6px; font-size:0.8rem; margin:0.3rem 0.3rem 0 0;">${s}</span>`).join('')}
+        </div>
+      </div>
+      <button class="btn ghost" data-id="${p.id}" aria-haspopup="dialog" data-magnetic>View Project</button>
+    `;
     card.querySelector('button').addEventListener('click', ()=> openProjectModal(p));
     card.addEventListener('keydown', e=>{ if(e.key==='Enter') openProjectModal(p); });
-    grid.appendChild(card);
+    track.appendChild(card);
   });
 }
 
