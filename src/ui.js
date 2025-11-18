@@ -3,9 +3,10 @@ import { smoothScrollTo, focusTrap, loadScriptOnce } from './utils.js';
 import { modalAnimation } from './animations.js';
 
 const projectsData = [
-  { id:1, title:'3D Portfolio Engine', desc:'Custom WebGL engine for portfolio scenes.', stack:['Three.js','GSAP'], repo:'#', model:'/assets/models/project-3d-01.glb' },
-  { id:2, title:'Interactive Resume', desc:'Generates PDF from dynamic components.', stack:['JavaScript','CSS'], repo:'#', model:'/assets/models/project-3d-02.glb' },
-  { id:3, title:'Neon Particle Lab', desc:'Physics-driven particle experiments.', stack:['WebGL','Shaders'], repo:'#', model:'/assets/models/project-3d-03.glb' }
+  { id:1, title:'AI & ML Projects', desc:'Working on Image Classification and Custom Vision using Microsoft Azure during AI internship.', stack:['Python','Azure','Machine Learning'], repo:'https://github.com/sidhu90989', model:'/assets/models/project-3d-01.glb' },
+  { id:2, title:'Android Applications', desc:'Developed Android apps during internship at CipherByte Technologies.', stack:['Android','Java','Kotlin'], repo:'https://github.com/sidhu90989', model:'/assets/models/project-3d-02.glb' },
+  { id:3, title:'UI/UX Design Projects', desc:'Created user interfaces and experiences at Cognifyz Technologies.', stack:['Figma','Adobe XD','Design'], repo:'https://github.com/sidhu90989', model:'/assets/models/project-3d-03.glb' },
+  { id:4, title:'Python Development', desc:'Built Python applications and scripts during CodSoft internship.', stack:['Python','Django','Flask'], repo:'https://github.com/sidhu90989', model:'/assets/models/project-3d-01.glb' }
 ];
 
 export function initUI(){

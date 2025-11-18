@@ -31,7 +31,7 @@ function initTypedText(){
   const typedElement = document.getElementById('typed-text');
   if(!typedElement) return;
   
-  const strings = ['Frontend Developer', 'UI/UX Designer', 'WebGL Developer', 'Creative Coder', '3D Enthusiast'];
+  const strings = ['AI Intern @ Edunet x Microsoft', 'Python Developer', 'Android Developer', 'UI/UX Designer', 'CPP Programmer', 'Oracle Database Enthusiast'];
   let stringIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
